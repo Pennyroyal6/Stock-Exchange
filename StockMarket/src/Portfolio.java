@@ -115,11 +115,25 @@ public class Portfolio {
 
     /**
      * Checks if the value passed in is positive or not
+     *
      * @param value The value to check if it's positive.
      * @return If value is greater than zero.
      */
     public boolean checkPositiveValue(int value) {
         return value > 0;
+    }
+
+    /**
+     * Gets the value of all of the stock held on the portfolio
+     *
+     * @return sum of the value of all stocks held
+     */
+    public int getTotalStockValue() {
+        int total = 0;
+        for (Stock s : stocks) {
+            total += s.getValueOfStock();
+        }
+        return total;
     }
 
 }
