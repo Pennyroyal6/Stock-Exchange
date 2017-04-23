@@ -56,7 +56,10 @@ public class Stock {
     public void decreaseValue(int value) {
         if(checkPositiveValue(value)) {
            price -= value; 
-        }    
+        }
+        if(this.price <= 0) {
+            makeStockUntradeable();
+        }
     }
     
     /**

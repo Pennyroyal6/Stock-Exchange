@@ -21,6 +21,7 @@ public class Trader {
     String company;
     ArrayList<Client> clients;
     TraderType type;
+    TraderMode mode;
 
     ArrayList<Portfolio> portfolios;
     Stock s;
@@ -44,6 +45,7 @@ public class Trader {
         this.company = company;
         this.type = type;
         clients = new ArrayList<Client>();
+        mode = TraderMode.Balanced;
     }
 
     /**
@@ -288,6 +290,42 @@ public class Trader {
             total += p.getMoney();
         }
         return total;
+    }
+
+    /**
+     * Chooses the trader mode
+     *
+     * @param mode The trader's mode from day before.
+     */
+    public void chooseMode(TraderMode mode) {
+        Random rand = new Random();
+        double probability = rand.nextDouble();
+        if (mode.equals(mode.Balanced)) {
+            if (probability <= 0.1) {
+                double probability2 = rand.nextDouble(); //since probability of buyer & seller equal when in balanced mode decide which one to choose with a new random
+                if (probability2 <= 0.5) {
+                    this.mode = TraderMode.AggressivePurchaser;
+                } else {
+                    this.mode = TraderMode.AggressiveSeller;
+                }
+            } else {
+                this.mode = TraderMode.Balanced;
+            }
+        }
+        if (mode.equals(mode.AggressiveSeller)) {
+            if (probability <= 0.4) {
+                this.mode = TraderMode.AggressiveSeller;
+            } else {
+                this.mode = TraderMode.Balanced;
+            }
+        }
+        if (mode.equals(mode.AggressivePurchaser)) {
+            if (probability <= 0.3) {
+                this.mode = TraderMode.AggressivePurchaser;
+            } else {
+                this.mode = TraderMode.Balanced;
+            }
+        }
     }
 
 }

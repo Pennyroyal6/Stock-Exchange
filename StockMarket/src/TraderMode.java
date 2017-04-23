@@ -8,6 +8,7 @@
  *
  * @author JoeThompson
  */
-public enum ExchangeType {
-    General, Futures, Derivatives, Commodities;
+public enum TraderMode {
+    Balanced, AggressivePurchaser, AggressiveSeller;
+    
 }
