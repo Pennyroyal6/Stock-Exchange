@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="Joes-MacBook-Pro.local" name="SimulatorJUnitTest" skipped="0" tests="26" time="5.225" timestamp="2017-04-19T21:49:02">
+<testsuite errors="0" failures="0" hostname="Joes-MacBook-Pro.local" name="SimulatorJUnitTest" skipped="0" tests="25" time="5.287" timestamp="2017-04-26T19:18:19">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="GB" />
@@ -11,7 +11,7 @@
     <property name="ant.core.lib" value="/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/extide/ant/lib/ant.jar" />
     <property name="javadoc.windowtitle" value="" />
     <property name="libs.jsp-compilation.javadoc" value="" />
-    <property name="user.dir" value="/Users/JoeThompson/Dropbox/NetBeansProjects/StockMarket" />
+    <property name="user.dir" value="/Users/JoeThompson/Dropbox/NetBeansProjects/Stock-Exchange/StockMarket" />
     <property name="libs.javaee-api-7.0.src" value="" />
     <property name="java.vm.version" value="25.121-b13" />
     <property name="libs.DataBindingME.classpath" value="/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/mobility/modules/ext/netbeans_databindingme.jar" />
@@ -57,7 +57,7 @@
     <property name="libs.j2me_common_ant.maven-pom" value="" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner SimulatorJUnitTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/Users/JoeThompson/Dropbox/NetBeansProjects/StockMarket/build/test/results/TEST-SimulatorJUnitTest.xml crashfile=/Users/JoeThompson/Dropbox/NetBeansProjects/StockMarket/build/junitvmwatcher1059012925403327366.properties propsfile=/Users/JoeThompson/Dropbox/NetBeansProjects/StockMarket/build/junit1044532506984405894.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner SimulatorJUnitTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/Users/JoeThompson/Dropbox/NetBeansProjects/Stock-Exchange/StockMarket/build/test/results/TEST-SimulatorJUnitTest.xml crashfile=/Users/JoeThompson/Dropbox/NetBeansProjects/Stock-Exchange/StockMarket/build/junitvmwatcher3568973664190916364.properties propsfile=/Users/JoeThompson/Dropbox/NetBeansProjects/Stock-Exchange/StockMarket/build/junit3621969370860602503.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
@@ -125,7 +125,7 @@
     <property name="libs.spring-framework400.src" value="" />
     <property name="libs.PostgreSQLDriver.src" value="" />
     <property name="sun.arch.data.model" value="64" />
-    <property name="basedir" value="/Users/JoeThompson/Dropbox/NetBeansProjects/StockMarket" />
+    <property name="basedir" value="/Users/JoeThompson/Dropbox/NetBeansProjects/Stock-Exchange/StockMarket" />
     <property name="libs.jpa20-persistence.maven-pom" value="" />
     <property name="jar.compress" value="false" />
     <property name="libs.javaee-web-api-7.0.classpath" value="/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/enterprise/modules/ext/javaee-web-api-7.0.jar" />
@@ -157,7 +157,7 @@
     <property name="addExports:java.base/jdk.internal.jrtfs" value="ALL-UNNAMED" />
     <property name="gopherProxySet" value="false" />
     <property name="libs.DataBindingME-SVG.classpath" value="/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/mobility/modules/ext/netbeans_databindingme_svg.jar" />
-    <property name="https.nonProxyHosts" value="localhost|127.0.0.1|UNKNOWN" />
+    <property name="https.nonProxyHosts" value="localhost|127.0.0.1|Joes-MacBook-Pro.local" />
     <property name="libs.PostgreSQLDriver.maven-pom" value="" />
     <property name="java.class.version" value="52.0" />
     <property name="libs.hibernate4-persistencemodelgen.maven-pom" value="" />
@@ -174,7 +174,7 @@
     <property name="libs.spring-webmvc4.0.maven-pom" value="" />
     <property name="libs.spring-framework300.src" value="" />
     <property name="libs.jstl.src" value="" />
-    <property name="empty.dir" value="/Users/JoeThompson/Dropbox/NetBeansProjects/StockMarket/build/empty" />
+    <property name="empty.dir" value="/Users/JoeThompson/Dropbox/NetBeansProjects/Stock-Exchange/StockMarket/build/empty" />
     <property name="version-output" value="java version &quot;1.8" />
     <property name="test.binarytestincludes" value="" />
     <property name="libs.hibernate4-persistencemodelgen.src" value="" />
@@ -217,14 +217,14 @@
     <property name="javac.processorpath" value="" />
     <property name="libs.hamcrest.maven-pom" value="" />
     <property name="javac.compilerargs" value="" />
-    <property name="ant.file" value="/Users/JoeThompson/Dropbox/NetBeansProjects/StockMarket/build.xml" />
+    <property name="ant.file" value="/Users/JoeThompson/Dropbox/NetBeansProjects/Stock-Exchange/StockMarket/build.xml" />
     <property name="libs.beans-binding.maven-pom" value="" />
     <property name="libs.hibernate4-support.javadoc" value="/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/java/modules/ext/docs/javax.persistence-2.1.0-doc.zip" />
     <property name="libs.jsf12.classpath" value="/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/enterprise/modules/ext/jsf-1_2/commons-beanutils.jar:/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/enterprise/modules/ext/jsf-1_2/commons-collections.jar:/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/enterprise/modules/ext/jsf-1_2/commons-digester.jar:/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/enterprise/modules/ext/jsf-1_2/commons-logging.jar:/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/enterprise/modules/ext/jsf-1_2/jsf-api.jar:/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/enterprise/modules/ext/jsf-1_2/jsf-impl.jar" />
-    <property name="ant.file.StockMarket" value="/Users/JoeThompson/Dropbox/NetBeansProjects/StockMarket/build.xml" />
+    <property name="ant.file.StockMarket" value="/Users/JoeThompson/Dropbox/NetBeansProjects/Stock-Exchange/StockMarket/build.xml" />
     <property name="libs.jstl.maven-pom" value="" />
     <property name="libs.restapi.maven-pom" value="" />
-    <property name="ant.file.StockMarket-impl" value="/Users/JoeThompson/Dropbox/NetBeansProjects/StockMarket/nbproject/build-impl.xml" />
+    <property name="ant.file.StockMarket-impl" value="/Users/JoeThompson/Dropbox/NetBeansProjects/Stock-Exchange/StockMarket/nbproject/build-impl.xml" />
     <property name="libs.beans-binding.src" value="" />
     <property name="java.vm.specification.vendor" value="Oracle Corporation" />
     <property name="libs.DataBindingME-PIM.javadoc" value="/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/mobility/modules/docs/netbeans_databindingme_pim-api.zip" />
@@ -294,7 +294,7 @@
     <property name="annotation.processing.processor.options" value="" />
     <property name="libs.testng.maven-pom" value="" />
     <property name="libs.jaxb.src" value="" />
-    <property name="work.dir" value="/Users/JoeThompson/Dropbox/NetBeansProjects/StockMarket" />
+    <property name="work.dir" value="/Users/JoeThompson/Dropbox/NetBeansProjects/Stock-Exchange/StockMarket" />
     <property name="libs.jaxb.classpath" value="/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/ide/modules/ext/jaxb/jaxb-impl.jar:/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/ide/modules/ext/jaxb/jaxb-xjc.jar:/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/ide/modules/ext/jaxb/jaxb1-impl.jar:/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/ide/modules/ext/jaxb/activation.jar:/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/ide/modules/ext/jaxb/api/jaxb-api.jar:/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/ide/modules/ext/jaxb/api/jsr173_1.0_api.jar" />
     <property name="do.depend" value="false" />
     <property name="libs.j2me_common_ant.classpath" value="/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/mobility/modules/org-netbeans-modules-j2me-common-ant.jar:/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/java/modules/org-netbeans-modules-classfile.jar" />
@@ -314,7 +314,7 @@
     <property name="addExports:java.management/sun.management" value="ALL-UNNAMED" />
     <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/jre/classes" />
     <property name="javac.target" value="1.8" />
-    <property name="built-jar.properties" value="/Users/JoeThompson/Dropbox/NetBeansProjects/StockMarket/build/built-jar.properties" />
+    <property name="built-jar.properties" value="/Users/JoeThompson/Dropbox/NetBeansProjects/Stock-Exchange/StockMarket/build/built-jar.properties" />
     <property name="build.test.classes.dir" value="build/test/classes" />
     <property name="src.dir" value="src" />
     <property name="libs.jpa2-persistence.src" value="" />
@@ -357,7 +357,7 @@
     <property name="libs.jpa2-persistence.javadoc" value="/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/java/modules/ext/docs/javax.persistence-2.1.0-doc.zip" />
     <property name="libs.DataBindingME.javadoc" value="/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/mobility/modules/docs/netbeans_databindingme-api.zip" />
     <property name="apple.laf.useScreenMenuBar" value="true" />
-    <property name="java.class.path" value="/Users/JoeThompson/Dropbox/NetBeansProjects/StockMarket/build/classes:/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/platform/modules/ext/junit-4.12.jar:/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/platform/modules/ext/hamcrest-core-1.3.jar:/Users/JoeThompson/Dropbox/NetBeansProjects/StockMarket/build/test/classes:/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/extide/ant/lib/ant-launcher.jar:/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/extide/ant/lib/ant.jar:/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/extide/ant/lib/ant-junit.jar:/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/extide/ant/lib/ant-junit4.jar" />
+    <property name="java.class.path" value="/Users/JoeThompson/Dropbox/NetBeansProjects/Stock-Exchange/StockMarket/build/classes:/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/platform/modules/ext/junit-4.12.jar:/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/platform/modules/ext/hamcrest-core-1.3.jar:/Users/JoeThompson/Dropbox/NetBeansProjects/Stock-Exchange/StockMarket/build/test/classes:/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/extide/ant/lib/ant-launcher.jar:/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/extide/ant/lib/ant.jar:/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/extide/ant/lib/ant-junit.jar:/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/extide/ant/lib/ant-junit4.jar" />
     <property name="addExports:java.desktop/java.awt.peer" value="ALL-UNNAMED" />
     <property name="addExports:java.desktop/com.sun.beans.editors" value="ALL-UNNAMED" />
     <property name="do.mkdist" value="true" />
@@ -406,32 +406,31 @@
     <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit" />
     <property name="libs.javaee-web-api-7.0.javadoc" value="/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/enterprise/docs/javaee-doc-api.jar" />
   </properties>
-  <testcase classname="SimulatorJUnitTest" name="tradingExchangeDerivativesType" time="0.003" />
-  <testcase classname="SimulatorJUnitTest" name="defaultStockMarketType" time="0.0" />
+  <testcase classname="SimulatorJUnitTest" name="tradingExchangeDerivativesType" time="0.006" />
+  <testcase classname="SimulatorJUnitTest" name="defaultStockMarketType" time="0.001" />
   <testcase classname="SimulatorJUnitTest" name="removeMoneyPreventNegativeAmountTest" time="0.001" />
-  <testcase classname="SimulatorJUnitTest" name="checkExpectedReturn" time="0.0" />
-  <testcase classname="SimulatorJUnitTest" name="tradingExchangeCommoditiesType" time="0.0" />
+  <testcase classname="SimulatorJUnitTest" name="checkExpectedReturn" time="0.001" />
+  <testcase classname="SimulatorJUnitTest" name="tradingExchangeCommoditiesType" time="0.001" />
   <testcase classname="SimulatorJUnitTest" name="checkClientsPortfolioWorth" time="0.001" />
-  <testcase classname="SimulatorJUnitTest" name="checkStockName" time="0.001" />
+  <testcase classname="SimulatorJUnitTest" name="checkStockName" time="0.0" />
   <testcase classname="SimulatorJUnitTest" name="checkPortfoliosClient" time="0.001" />
   <testcase classname="SimulatorJUnitTest" name="assignExchangeToStockMarket" time="0.001" />
   <testcase classname="SimulatorJUnitTest" name="tradingExchangeFuturesType" time="0.001" />
-  <testcase classname="SimulatorJUnitTest" name="tradingExchangeDefaultType" time="0.001" />
+  <testcase classname="SimulatorJUnitTest" name="tradingExchangeDefaultType" time="0.0" />
   <testcase classname="SimulatorJUnitTest" name="increaseStockPrice" time="0.001" />
   <testcase classname="SimulatorJUnitTest" name="assignPortfolioToClient" time="0.001" />
   <testcase classname="SimulatorJUnitTest" name="addStockToPortfolio" time="0.001" />
   <testcase classname="SimulatorJUnitTest" name="checkClientTrader" time="0.001" />
-  <testcase classname="SimulatorJUnitTest" name="depositMoneyTest" time="0.003" />
-  <testcase classname="SimulatorJUnitTest" name="removeMoneyTest" time="0.0" />
-  <testcase classname="SimulatorJUnitTest" name="checkRisk" time="0.001" />
+  <testcase classname="SimulatorJUnitTest" name="depositMoneyTest" time="0.007" />
+  <testcase classname="SimulatorJUnitTest" name="removeMoneyTest" time="0.001" />
+  <testcase classname="SimulatorJUnitTest" name="checkRisk" time="0.003" />
   <testcase classname="SimulatorJUnitTest" name="decreaseStockPrice" time="0.0" />
   <testcase classname="SimulatorJUnitTest" name="checkIncrementingID" time="0.001" />
-  <testcase classname="SimulatorJUnitTest" name="clientName" time="0.0" />
-  <testcase classname="SimulatorJUnitTest" name="removeStockFromPortfolio" time="0.0" />
-  <testcase classname="SimulatorJUnitTest" name="checkLicenceFalse" time="0.0" />
-  <testcase classname="SimulatorJUnitTest" name="checkStockOwner" time="0.001" />
-  <testcase classname="SimulatorJUnitTest" name="checkStockPrice" time="0.004" />
-  <testcase classname="SimulatorJUnitTest" name="checkLicenceTrue" time="0.001" />
+  <testcase classname="SimulatorJUnitTest" name="clientName" time="0.001" />
+  <testcase classname="SimulatorJUnitTest" name="removeStockFromPortfolio" time="0.001" />
+  <testcase classname="SimulatorJUnitTest" name="checkLicenceFalse" time="0.004" />
+  <testcase classname="SimulatorJUnitTest" name="checkStockPrice" time="0.0" />
+  <testcase classname="SimulatorJUnitTest" name="checkLicenceTrue" time="0.015" />
   <system-out><![CDATA[Cannot not have a negative money amount.
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>

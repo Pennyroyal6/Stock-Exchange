@@ -62,19 +62,22 @@ public class Portfolio {
      * Adds stock the the portfolio
      *
      * @param stock The stock to be added to the portfolio.
+     * @param quantity The quantity of stock added.
      */
-    public void addStock(Stock stock) {
+    public void addStock(Stock stock, int quantity) {
         stocks.add(stock);
-        stock.setOwnedBy(client);
+        stock.quantity += quantity;
     }
 
     /**
      * Removes stock from the portfolio
      *
      * @param stock The stock to be removed from the portfolio.
+     * @param quantity The quantity of stock removed
      */
-    public void deleteStock(Stock stock) {
+    public void deleteStock(Stock stock, int quantity) {
         stocks.remove(stock);
+        stock.quantity -= quantity;
     }
 
     /**

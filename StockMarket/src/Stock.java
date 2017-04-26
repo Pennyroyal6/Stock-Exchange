@@ -15,20 +15,22 @@ public class Stock {
     String companyName;
     double price;
     boolean tradeable = false;
-    Client client;
+    int quantity;
+    private static int sharesOffered;
 
     /**
      * Construct stock
      * @param companyName The company the stock belongs to.
      * @param price The price of the stock.
      */
-    public Stock(String companyName, int price) {
+    public Stock(String companyName, int price, int sharesOffered) {
         setStockID(++count);
         this.companyName = companyName;
         this.price = price;
         if(price > 0) {
             tradeable = true;
         }
+        this.sharesOffered = sharesOffered;
     }
     
     /**
@@ -84,22 +86,6 @@ public class Stock {
      */
     public void setCompanyStockReperesents(String companyName) {
         this.companyName = companyName;
-    }
-    
-    /**
-     * Sets who owns the stock
-     * @param client The client to own the stock.
-     */
-    public void setOwnedBy(Client client) {
-        this.client = client;
-    }
-
-    /**
-     * Returns who owns the stock
-     * @return The client who owns the stock.
-     */
-    public String getOwnedBy() {
-        return client.clientName;
     }
     
     /**

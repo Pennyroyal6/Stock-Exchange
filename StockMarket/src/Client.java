@@ -105,7 +105,8 @@ public class Client {
     public int checkValue(){
         int value = 0;
         for (int i = 0; i < portfolio.stocks.size(); i++) {
-            value  += portfolio.stocks.get(i).price;
+            value  += portfolio.stocks.get(i).price * portfolio.stocks.get(i).quantity;
+            //need to factor in the quantity when getting the value
         }
         return value + portfolio.money;
     }

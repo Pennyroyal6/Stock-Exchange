@@ -18,7 +18,9 @@ import static org.junit.Assert.*;
 public class SimulatorJUnitTest {
     
     static Client client;
+    static Client client2;
     static Portfolio portfolio;
+    static Portfolio portfolio2;
     static Stock stock1;
     static Stock stock2;
     static StockMarket stockMarket;
@@ -34,11 +36,13 @@ public class SimulatorJUnitTest {
         iTrader = new Trader("Intelli Trader", true, "Wolf & Gecko LTD", TraderType.Intelligent);
         rTrader = new Trader("Random Trader", false, "Cat & Lizard LTD", TraderType.Random);
         client = new Client("Kingsley Sage", 1, 100);
+        client2 = new Client("Ian Wakeman", 1, 200);
         portfolio = new Portfolio(client);
+        portfolio2 = new Portfolio(client2);
         stockMarket = new StockMarket();
         tradingExchange= new TradingExchange(ExchangeType.General, 1);
-        stock1 = new Stock("Test Company", 5);
-        stock2 = new Stock("Pepsi", 12);
+        stock1 = new Stock("Test Company", 5, 100);
+        stock2 = new Stock("Pepsi", 12, 50);
     }
     
     @AfterClass
@@ -121,26 +125,26 @@ public class SimulatorJUnitTest {
     
     @Test
     public void addStockToPortfolio() {
-        portfolio.addStock(stock1);
+        portfolio.addStock(stock1, 100);
         assertEquals(1, portfolio.stocks.size());
     }
     
     @Test
     public void removeStockFromPortfolio() {
-        portfolio.deleteStock(stock1);
+        portfolio.deleteStock(stock1, 100);
         assertEquals(0, portfolio.stocks.size());
     }
     
     @Test
     public void depositMoneyTest() {
-        client.depositInitialMoney(10);
-        assertEquals(10, portfolio.getMoney());
+        client.depositInitialMoney(5);
+        assertEquals(5, portfolio.getMoney());
     }
     
     @Test
     public void removeMoneyTest() {
         portfolio.removeMoney(5);
-        assertEquals(5, portfolio.getMoney());
+        assertEquals(0, portfolio.getMoney());
     }
     
     @Test
@@ -183,11 +187,11 @@ public class SimulatorJUnitTest {
     
     @Test
     public void checkClientsPortfolioWorth() {
-        client.depositInitialMoney(10);
-        portfolio.addStock(stock1);
-        assertEquals(15, client.checkValue());
-        portfolio.removeMoney(10);
-        portfolio.deleteStock(stock1);
+        client.depositInitialMoney(100);
+        portfolio.addStock(stock1, 100);
+        assertEquals(600, client.checkValue());
+        portfolio.deleteStock(stock1, 100);
+        portfolio.removeMoney(100);
     }
     
     //Stock tests
@@ -211,10 +215,5 @@ public class SimulatorJUnitTest {
     public void decreaseStockPrice() {
         stock2.decreaseValue(7);
         assertEquals(5, stock2.getValueOfStock(), 0.0);
-    }
-    
-    @Test
-    public void checkStockOwner() {
-        assertEquals("Kingsley Sage", stock1.getOwnedBy());
     }
 }
