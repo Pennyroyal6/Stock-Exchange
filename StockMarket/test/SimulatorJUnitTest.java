@@ -41,8 +41,8 @@ public class SimulatorJUnitTest {
         portfolio2 = new Portfolio(client2);
         stockMarket = new StockMarket();
         tradingExchange= new TradingExchange(ExchangeType.General, 1);
-        stock1 = new Stock("Test Company", 5, 100);
-        stock2 = new Stock("Pepsi", 12, 50);
+        stock1 = new Stock("Test Company", StockType.Hard, 5, 100);
+        stock2 = new Stock("Pepsi", StockType.Food, 12, 50);
     }
     
     @AfterClass
@@ -215,5 +215,17 @@ public class SimulatorJUnitTest {
     public void decreaseStockPrice() {
         stock2.decreaseValue(7);
         assertEquals(5, stock2.getValueOfStock(), 0.0);
+    }
+    
+    @Test
+    public void checkStockType() {
+        assertEquals(StockType.Hard, stock1.getStockType());
+    }
+    
+    @Test
+    public void changeStockType() {
+        stock1.changeStockType(StockType.Food);
+        assertEquals(StockType.Food, stock1.getStockType());
+        stock1.changeStockType(StockType.Hard);
     }
 }

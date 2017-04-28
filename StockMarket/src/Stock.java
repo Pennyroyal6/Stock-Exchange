@@ -17,15 +17,17 @@ public class Stock {
     boolean tradeable = false;
     int quantity;
     private static int sharesOffered;
+    StockType type;
 
     /**
      * Construct stock
      * @param companyName The company the stock belongs to.
      * @param price The price of the stock.
      */
-    public Stock(String companyName, int price, int sharesOffered) {
+    public Stock(String companyName, StockType type, double price, int sharesOffered) {
         setStockID(++count);
         this.companyName = companyName;
+        this.type = type;
         this.price = price;
         if(price > 0) {
             tradeable = true;
@@ -102,5 +104,17 @@ public class Stock {
      */
     public void makeStockUntradeable() {
         this.tradeable = false;
+    }
+    
+    /**
+     * Changes the type of the stock
+     * @param type The type the stock will be changed to.
+     */
+    public void changeStockType(StockType type) {
+        this.type = type;
+    }
+
+    public StockType getStockType() {
+        return this.type;
     }
 }

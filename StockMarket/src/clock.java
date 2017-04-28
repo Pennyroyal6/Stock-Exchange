@@ -8,7 +8,7 @@
  *
  * @author mss60
  */
-public class clock {
+public class Clock {
 
     static int hours;
     static int minutes;
@@ -17,7 +17,7 @@ public class clock {
     static int month;
     static boolean marketState;
 
-    public clock() {
+    public Clock() {
         dayCounter = 1;
         day = 1;
         hours = 0;
@@ -134,7 +134,7 @@ public class clock {
     }
 
     public static void main(String[] args) {
-        clock c = new clock();
+        Clock c = new Clock();
         System.out.println("day counter: " + dayCounter);
         System.out.println("day: " + day);
         System.out.println("month: " + month);
