@@ -58,6 +58,12 @@ public class SimulatorJUnitTest {
     }
 
     // TODO add test methods here.
+    
+    @Test
+    public void checkStockTradeable() {
+        assertTrue(stock1.tradeable);
+    }
+    
     @Test
     public void checkIncrementingID() {
         assertEquals(1, iTrader.getTraderID());

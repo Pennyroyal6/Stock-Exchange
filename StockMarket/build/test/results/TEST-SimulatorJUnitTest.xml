@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="Joes-MBP" name="SimulatorJUnitTest" skipped="0" tests="27" time="0.403" timestamp="2017-04-28T21:59:35">
+<testsuite errors="0" failures="0" hostname="Joes-MacBook-Pro.local" name="SimulatorJUnitTest" skipped="0" tests="28" time="5.315" timestamp="2017-05-01T19:10:56">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="GB" />
@@ -57,7 +57,7 @@
     <property name="libs.j2me_common_ant.maven-pom" value="" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner SimulatorJUnitTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/Users/JoeThompson/Dropbox/NetBeansProjects/Stock-Exchange/StockMarket/build/test/results/TEST-SimulatorJUnitTest.xml crashfile=/Users/JoeThompson/Dropbox/NetBeansProjects/Stock-Exchange/StockMarket/build/junitvmwatcher3028229044169315367.properties propsfile=/Users/JoeThompson/Dropbox/NetBeansProjects/Stock-Exchange/StockMarket/build/junit5537621922492561772.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner SimulatorJUnitTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/Users/JoeThompson/Dropbox/NetBeansProjects/Stock-Exchange/StockMarket/build/test/results/TEST-SimulatorJUnitTest.xml crashfile=/Users/JoeThompson/Dropbox/NetBeansProjects/Stock-Exchange/StockMarket/build/junitvmwatcher6668628507279473292.properties propsfile=/Users/JoeThompson/Dropbox/NetBeansProjects/Stock-Exchange/StockMarket/build/junit7226356484015838737.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
@@ -157,7 +157,7 @@
     <property name="addExports:java.base/jdk.internal.jrtfs" value="ALL-UNNAMED" />
     <property name="gopherProxySet" value="false" />
     <property name="libs.DataBindingME-SVG.classpath" value="/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/mobility/modules/ext/netbeans_databindingme_svg.jar" />
-    <property name="https.nonProxyHosts" value="localhost|127.0.0.1|Joes-MBP" />
+    <property name="https.nonProxyHosts" value="localhost|127.0.0.1|Joes-MacBook-Pro.local" />
     <property name="libs.PostgreSQLDriver.maven-pom" value="" />
     <property name="java.class.version" value="52.0" />
     <property name="libs.hibernate4-persistencemodelgen.maven-pom" value="" />
@@ -406,31 +406,32 @@
     <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit" />
     <property name="libs.javaee-web-api-7.0.javadoc" value="/Applications/NetBeans/NetBeans 8.2.app/Contents/Resources/NetBeans/enterprise/docs/javaee-doc-api.jar" />
   </properties>
-  <testcase classname="SimulatorJUnitTest" name="tradingExchangeDerivativesType" time="0.006" />
-  <testcase classname="SimulatorJUnitTest" name="defaultStockMarketType" time="0.0" />
-  <testcase classname="SimulatorJUnitTest" name="removeMoneyPreventNegativeAmountTest" time="0.002" />
+  <testcase classname="SimulatorJUnitTest" name="tradingExchangeDerivativesType" time="0.004" />
+  <testcase classname="SimulatorJUnitTest" name="defaultStockMarketType" time="0.001" />
+  <testcase classname="SimulatorJUnitTest" name="removeMoneyPreventNegativeAmountTest" time="0.001" />
   <testcase classname="SimulatorJUnitTest" name="checkExpectedReturn" time="0.0" />
-  <testcase classname="SimulatorJUnitTest" name="tradingExchangeCommoditiesType" time="0.0" />
+  <testcase classname="SimulatorJUnitTest" name="tradingExchangeCommoditiesType" time="0.001" />
   <testcase classname="SimulatorJUnitTest" name="checkClientsPortfolioWorth" time="0.001" />
   <testcase classname="SimulatorJUnitTest" name="checkStockName" time="0.001" />
   <testcase classname="SimulatorJUnitTest" name="checkStockType" time="0.001" />
   <testcase classname="SimulatorJUnitTest" name="checkPortfoliosClient" time="0.001" />
-  <testcase classname="SimulatorJUnitTest" name="assignExchangeToStockMarket" time="0.002" />
-  <testcase classname="SimulatorJUnitTest" name="tradingExchangeFuturesType" time="0.001" />
+  <testcase classname="SimulatorJUnitTest" name="assignExchangeToStockMarket" time="0.0" />
+  <testcase classname="SimulatorJUnitTest" name="tradingExchangeFuturesType" time="0.0" />
   <testcase classname="SimulatorJUnitTest" name="tradingExchangeDefaultType" time="0.0" />
   <testcase classname="SimulatorJUnitTest" name="increaseStockPrice" time="0.001" />
-  <testcase classname="SimulatorJUnitTest" name="assignPortfolioToClient" time="0.001" />
+  <testcase classname="SimulatorJUnitTest" name="assignPortfolioToClient" time="0.0" />
   <testcase classname="SimulatorJUnitTest" name="addStockToPortfolio" time="0.001" />
-  <testcase classname="SimulatorJUnitTest" name="checkClientTrader" time="0.011" />
+  <testcase classname="SimulatorJUnitTest" name="checkStockTradeable" time="0.004" />
+  <testcase classname="SimulatorJUnitTest" name="checkClientTrader" time="0.0" />
   <testcase classname="SimulatorJUnitTest" name="depositMoneyTest" time="0.0" />
-  <testcase classname="SimulatorJUnitTest" name="removeMoneyTest" time="0.001" />
-  <testcase classname="SimulatorJUnitTest" name="checkRisk" time="0.002" />
-  <testcase classname="SimulatorJUnitTest" name="decreaseStockPrice" time="0.049" />
-  <testcase classname="SimulatorJUnitTest" name="checkIncrementingID" time="0.003" />
+  <testcase classname="SimulatorJUnitTest" name="removeMoneyTest" time="0.0" />
+  <testcase classname="SimulatorJUnitTest" name="checkRisk" time="0.001" />
+  <testcase classname="SimulatorJUnitTest" name="decreaseStockPrice" time="0.001" />
+  <testcase classname="SimulatorJUnitTest" name="checkIncrementingID" time="0.0" />
   <testcase classname="SimulatorJUnitTest" name="changeStockType" time="0.001" />
-  <testcase classname="SimulatorJUnitTest" name="clientName" time="0.001" />
-  <testcase classname="SimulatorJUnitTest" name="removeStockFromPortfolio" time="0.003" />
-  <testcase classname="SimulatorJUnitTest" name="checkLicenceFalse" time="0.001" />
+  <testcase classname="SimulatorJUnitTest" name="clientName" time="0.0" />
+  <testcase classname="SimulatorJUnitTest" name="removeStockFromPortfolio" time="0.0" />
+  <testcase classname="SimulatorJUnitTest" name="checkLicenceFalse" time="0.0" />
   <testcase classname="SimulatorJUnitTest" name="checkStockPrice" time="0.001" />
   <testcase classname="SimulatorJUnitTest" name="checkLicenceTrue" time="0.0" />
   <system-out><![CDATA[Cannot not have a negative money amount.

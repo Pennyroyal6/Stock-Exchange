@@ -63,6 +63,7 @@ public class Stock {
         }
         if(this.price <= 0) {
             makeStockUntradeable();
+            this.price = 0;
         }
     }
     
