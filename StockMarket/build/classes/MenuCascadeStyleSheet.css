@@ -1,0 +1,21 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 02-May-2017, 22:32:04
+    Author     : JoeThompson
+*/
+
+.okButton {
+    -fx-base: #32CD32;
+    -fx-pref-height: 50px;
+    -fx-pref-width: 100px;
+}
+
+.cancelButton {
+    -fx-base: #FF0000;
+    -fx-pref-height: 50px;
+    -fx-pref-width: 100px;
+}

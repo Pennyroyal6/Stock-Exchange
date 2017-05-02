@@ -3,11 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/JoeThompson/Dropbox/NetBeansProjects/Stock-Exchange/StockMarket/test/SimulatorJUnitTest.java</file>
             <file>file:/Users/JoeThompson/Dropbox/NetBeansProjects/Stock-Exchange/StockMarket/src/SimulationGUI.java</file>
             <file>file:/Users/JoeThompson/Dropbox/NetBeansProjects/Stock-Exchange/StockMarket/src/RunSimulation.java</file>
+            <file>file:/Users/JoeThompson/Dropbox/NetBeansProjects/Stock-Exchange/StockMarket/src/TradingExchange.java</file>
             <file>file:/Users/JoeThompson/Dropbox/NetBeansProjects/Stock-Exchange/StockMarket/src/SimulationCascadeStyleSheet.css</file>
             <file>file:/Users/JoeThompson/Dropbox/NetBeansProjects/Stock-Exchange/StockMarket/src/Portfolio.java</file>
+            <file>file:/Users/JoeThompson/Dropbox/NetBeansProjects/Stock-Exchange/StockMarket/src/MenuCascadeStyleSheet.css</file>
             <file>file:/Users/JoeThompson/Dropbox/NetBeansProjects/Stock-Exchange/StockMarket/src/Client.java</file>
             <file>file:/Users/JoeThompson/Dropbox/NetBeansProjects/Stock-Exchange/StockMarket/src/Trader.java</file>
         </group>
