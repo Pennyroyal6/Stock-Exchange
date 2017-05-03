@@ -32,8 +32,6 @@ public class RunSimulation {
     }
 
     public static void main(String[] args) {
-        //RunSimulation simulation = new RunSimulation();
-        //SimulationGUI gui = new SimulationGUI(simulation);
         Application.launch(SimulationGUI.class, args);
     }
 
