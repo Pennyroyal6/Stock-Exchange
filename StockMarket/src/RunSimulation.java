@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import javafx.application.Application;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -17,9 +18,23 @@ public class RunSimulation {
     ArrayList<Portfolio> portfolios;
     ArrayList<Trader> traders;
     Clock clock;
+    TradingExchange tradingExchange;
+    StockMarket stockMarket;
 
     public RunSimulation() {
+        stocks = new ArrayList<Stock>();
+        clients = new ArrayList<Client>();
+        portfolios = new ArrayList<Portfolio>();
+        traders = new ArrayList<Trader>();
+        stockMarket = new StockMarket();
+        tradingExchange = new TradingExchange(ExchangeType.General, stockMarket.marketID);
         initialization();
+    }
+
+    public static void main(String[] args) {
+        //RunSimulation simulation = new RunSimulation();
+        //SimulationGUI gui = new SimulationGUI(simulation);
+        Application.launch(SimulationGUI.class, args);
     }
 
     public void initialization() {
@@ -62,7 +77,6 @@ public class RunSimulation {
             portfolios.add(new Portfolio(clients.get(i)));
             clients.get(i).setPortfolio(portfolios.get(i));
         }
-        
         //Assign initial stocks and cash to portfolio
         for (int i = 0; i < portfolios.size(); i++) {
             Portfolio currentPortfolio = portfolios.get(i);
@@ -641,7 +655,7 @@ public class RunSimulation {
         traders.add(new Trader("Random 6", true, "Random Traders LTD", TraderType.Random));
         traders.add(new Trader("Random 7", true, "Random Traders LTD", TraderType.Random));
         traders.add(new Trader("Random 8", true, "Random Traders LTD", TraderType.Random));
-        
+
         //Assign Wolf & Gecko trader to Norbert & Justine
         traders.get(0).addClient(clients.get(0));
         traders.get(0).addPortfolio(portfolios.get(0));
@@ -649,9 +663,11 @@ public class RunSimulation {
         traders.get(0).addPortfolio(portfolios.get(0));
 
         //Assign random traders to their clients & portfolios
-        for(int i  = 1; i < clients.size(); i++) {
-            traders.get(i).addClient(clients.get(i));
-            traders.get(i).addPortfolio(portfolios.get(i));
+        for (int i = 1; i < traders.size(); i++) {
+            if (i != 7) {
+                traders.get(i).addClient(clients.get(i));
+                traders.get(i).addPortfolio(portfolios.get(i));
+            }
         }
     }
 }

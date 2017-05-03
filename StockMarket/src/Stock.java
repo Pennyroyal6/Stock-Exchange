@@ -16,7 +16,7 @@ public class Stock {
     double price;
     boolean tradeable = false;
     int quantity;
-    private static int sharesOffered;
+    public int sharesOffered;
     StockType type;
 
     /**
@@ -128,7 +128,46 @@ public class Stock {
         this.type = type;
     }
 
+    /**
+     * Returns the type of stock
+     * @return The type of the stock.
+     */
     public StockType getStockType() {
         return this.type;
     }
+
+    /**
+     * Retrieves stockID
+     * @return The stockID.
+     */
+    public int getStockID() {
+        return stockID;
+    }
+
+    /**
+     * Sets the type of stock
+     * @param type The type of stock.
+     */
+    public void setType(StockType type) {
+        this.type = type;
+    }
+
+    /**
+     * Sets the price of the stock
+     * @param price The price of the stock.
+     */
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    /**
+     * Sets the amount of stocks offered
+     * @param quantity The quantity of the stock offered.
+     */
+    public void setSharesOffered(int quantity) {
+        this.sharesOffered = quantity;
+    }
+    
+    
+    
 }

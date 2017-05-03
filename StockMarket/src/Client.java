@@ -41,6 +41,14 @@ public class Client {
     }
 
     /**
+     * Retrieves the clientID
+     * @return the clientID.
+     */
+    public int getClientID() {
+        return clientID;
+    }
+
+    /**
      * Returns client's risk
      * @return The client's risk.
      */
@@ -57,6 +65,24 @@ public class Client {
             this.risk = risk;  
         }
     }
+
+    /**
+     * Sets the client's name
+     * @param clientName The client's name.
+     */
+    public void setName(String clientName) {
+        this.clientName = clientName;
+    }
+
+    /**
+     * Sets the expected return of the client
+     * @param expectedReturn The client's expected return.
+     */
+    public void setReturn(int expectedReturn) {
+        this.expectedReturn = expectedReturn;
+    }
+    
+    
 
     /**
      * Returns the client's trader

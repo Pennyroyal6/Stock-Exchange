@@ -45,6 +45,7 @@ public class Trader {
         this.company = company;
         this.type = type;
         clients = new ArrayList<Client>();
+        portfolios = new ArrayList<Portfolio>();
         mode = TraderMode.Balanced;
     }
 
@@ -66,6 +67,38 @@ public class Trader {
         return this.traderID;
     }
 
+    /**
+     * Sets the traders name
+     * @param name The name of the trader
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * Sets the trader's licence
+     * @param licence The trader's licence.
+     */
+    public void setLicence(boolean licence) {
+        this.licence = licence;
+    }
+
+    /**
+     * Sets the trader's company
+     * @param company The trader's company.
+     */
+    public void setCompany(String company) {
+        this.company = company;
+    }
+
+    /**
+     * Sets the type of trader
+     * @param type The type of trader.
+     */
+    public void setType(TraderType type) {
+        this.type = type;
+    }
+    
     /**
      * Checks if trader has a licence
      *
