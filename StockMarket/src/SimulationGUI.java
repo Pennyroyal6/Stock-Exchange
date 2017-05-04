@@ -41,6 +41,7 @@ public class SimulationGUI extends Application {
     @Override
     public void start(Stage stage) {
         simulation = new RunSimulation();
+        stage.setTitle("Wolf & Gecko Stock Market Simulation");
 
         BorderPane root = new BorderPane();
         Scene scene = new Scene(root, 1200, 800, Color.WHITE);
@@ -62,6 +63,7 @@ public class SimulationGUI extends Application {
         addStockMenuItem.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent t) {
                 Stage stage = new Stage();
+                stage.setTitle("Add Stock");
                 GridPane grid = new GridPane();
                 grid.setPadding(new Insets(50, 50, 50, 100));
                 grid.setHgap(50);
@@ -106,7 +108,7 @@ public class SimulationGUI extends Application {
                 TextField quantityTextField = new TextField();
                 grid.add(quantityTextField, 1, 5);
 
-                Button okButton = new Button("Ok");
+                Button okButton = new Button("OK");
                 okButton.getStyleClass().add("okButton");
                 grid.add(okButton, 0, 6);
                 okButton.setOnAction(new EventHandler<ActionEvent>() {
@@ -155,6 +157,7 @@ public class SimulationGUI extends Application {
             @Override
             public void handle(ActionEvent t) {
                 Stage stage = new Stage();
+                stage.setTitle("Edit Stock");
                 GridPane grid = new GridPane();
                 grid.setPadding(new Insets(50, 50, 50, 100));
                 grid.setHgap(50);
@@ -167,7 +170,7 @@ public class SimulationGUI extends Application {
                 TextField stockIDTextField = new TextField();
                 grid.add(stockIDTextField, 1, 0);
 
-                Button okButton = new Button("Ok");
+                Button okButton = new Button("OK");
                 okButton.getStyleClass().add("okButton");
                 okButton.setTranslateX(50);
                 grid.add(okButton, 0, 1);
@@ -175,18 +178,21 @@ public class SimulationGUI extends Application {
                     @Override
                     public void handle(ActionEvent t) {
                         int stockID = Integer.parseInt(stockIDTextField.getText());
+                        boolean found = false;
                         for (int i = 0; i < simulation.stocks.size(); i++) {
                             if (stockID == simulation.stocks.get(i).getStockID()) {
+                                found = true;
                                 Stock stock = simulation.stocks.get(i);
                                 stage.close();
                                 Stage stage = new Stage();
+                                stage.setTitle("Edit Stock");
                                 GridPane grid = new GridPane();
                                 grid.setPadding(new Insets(50, 50, 50, 100));
                                 grid.setHgap(50);
                                 grid.setVgap(50);
                                 Scene scene = new Scene(grid, 500, 600, Color.WHITE);
 
-                                Label title = new Label("Add Stock");
+                                Label title = new Label("Edit Stock");
                                 title.getStyleClass().add("title");
                                 title.setTranslateX(100);
                                 grid.add(title, 0, 0);
@@ -236,7 +242,7 @@ public class SimulationGUI extends Application {
                                 quantityTextField.setText("" + stock.sharesOffered);
                                 grid.add(quantityTextField, 1, 5);
 
-                                Button okButton = new Button("Ok");
+                                Button okButton = new Button("OK");
                                 okButton.getStyleClass().add("okButton");
                                 grid.add(okButton, 0, 6);
                                 okButton.setOnAction(new EventHandler<ActionEvent>() {
@@ -281,6 +287,13 @@ public class SimulationGUI extends Application {
                                 stage.show();
                             }
                         }
+                        if (!found) {
+                            Alert error = new Alert(AlertType.ERROR);
+                            error.setTitle("Stock not found.");
+                            error.setHeaderText(null);
+                            error.setContentText("The stockID " + stockID + " does not exist.");
+                            error.showAndWait();
+                        }
                     }
 
                 });
@@ -303,6 +316,73 @@ public class SimulationGUI extends Application {
 
         });
         MenuItem removeStockMenuItem = new MenuItem("Remove Stock");
+        removeStockMenuItem.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent t) {
+                Stage stage = new Stage();
+                stage.setTitle("Remove Stock");
+                GridPane grid = new GridPane();
+                grid.setPadding(new Insets(50, 50, 50, 100));
+                grid.setHgap(50);
+                grid.setVgap(50);
+                Scene scene = new Scene(grid, 600, 250, Color.WHITE);
+
+                Label stockIDLabel = new Label("StockID");
+                grid.add(stockIDLabel, 0, 0);
+
+                TextField stockIDTextField = new TextField();
+                grid.add(stockIDTextField, 1, 0);
+
+                Button okButton = new Button("OK");
+                okButton.getStyleClass().add("okButton");
+                okButton.setTranslateX(50);
+                grid.add(okButton, 0, 1);
+                okButton.setOnAction(new EventHandler<ActionEvent>() {
+                    @Override
+                    public void handle(ActionEvent t) {
+                        int stockID = Integer.parseInt(stockIDTextField.getText());
+                        boolean found = false;
+                        for (int i = 0; i < simulation.stocks.size(); i++) {
+                            if (stockID == simulation.stocks.get(i).getStockID()) {
+                                found = true;
+                                Stock removedStock = simulation.stocks.get(i);
+                                simulation.stocks.remove(i);
+                                stage.close();
+                                Alert confirm = new Alert(AlertType.INFORMATION);
+                                confirm.setTitle("Confirmation");
+                                confirm.setHeaderText(null);
+                                confirm.setContentText(removedStock.sharesOffered + " shares from" + removedStock.companyName + " have been removed.");
+                                confirm.showAndWait();
+                            }
+                        }
+                        if (!found) {
+                            Alert error = new Alert(AlertType.ERROR);
+                            error.setTitle("Stock not found.");
+                            error.setHeaderText(null);
+                            error.setContentText("The stockID " + stockID + " does not exist.");
+                            error.showAndWait();
+                        }
+                    }
+
+                });
+                Button cancelButton = new Button("Cancel");
+                cancelButton.getStyleClass().add("cancelButton");
+                cancelButton.setTranslateX(80);
+                cancelButton.setOnAction(new EventHandler<ActionEvent>() {
+                    @Override
+                    public void handle(ActionEvent e) {
+                        stage.close();
+                    }
+                });
+                grid.add(cancelButton, 1, 1);
+
+                stage.setScene(scene);
+                stage.centerOnScreen();
+                scene.getStylesheets().add("MenuCascadeStyleSheet.css");
+                stage.show();
+            }
+
+        });
         stockMenu.getItems().addAll(addStockMenuItem, new SeparatorMenuItem(), editStockMenuItem, new SeparatorMenuItem(), removeStockMenuItem);
 
         //Create Trader menu - Add Trader, Edit Trader, Remove Trader
@@ -311,6 +391,7 @@ public class SimulationGUI extends Application {
         addTraderMenuItem.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent t) {
                 Stage stage = new Stage();
+                stage.setTitle("Add Trader");
                 GridPane grid = new GridPane();
                 grid.setPadding(new Insets(50, 50, 50, 100));
                 grid.setHgap(50);
@@ -356,7 +437,7 @@ public class SimulationGUI extends Application {
                 ComboBox typeComboBox = new ComboBox(typeOptions);
                 grid.add(typeComboBox, 1, 5);
 
-                Button okButton = new Button("Ok");
+                Button okButton = new Button("OK");
                 okButton.getStyleClass().add("okButton");
                 grid.add(okButton, 0, 6);
                 okButton.setOnAction(new EventHandler<ActionEvent>() {
@@ -403,6 +484,7 @@ public class SimulationGUI extends Application {
             @Override
             public void handle(ActionEvent e) {
                 Stage stage = new Stage();
+                stage.setTitle("Edit Trader");
                 GridPane grid = new GridPane();
                 grid.setPadding(new Insets(50, 50, 50, 100));
                 grid.setHgap(50);
@@ -415,7 +497,7 @@ public class SimulationGUI extends Application {
                 TextField traderIDTextField = new TextField();
                 grid.add(traderIDTextField, 1, 0);
 
-                Button okButton = new Button("Ok");
+                Button okButton = new Button("OK");
                 okButton.getStyleClass().add("okButton");
                 okButton.setTranslateX(50);
                 grid.add(okButton, 0, 1);
@@ -423,11 +505,14 @@ public class SimulationGUI extends Application {
                     @Override
                     public void handle(ActionEvent t) {
                         int traderID = Integer.parseInt(traderIDTextField.getText());
+                        boolean found = false;
                         for (int i = 0; i < simulation.traders.size(); i++) {
                             if (traderID == simulation.traders.get(i).getTraderID()) {
+                                found = true;
                                 Trader trader = simulation.traders.get(i);
                                 stage.close();
                                 Stage stage = new Stage();
+                                stage.setTitle("Edit Trader");
                                 GridPane grid = new GridPane();
                                 grid.setPadding(new Insets(50, 50, 50, 100));
                                 grid.setHgap(50);
@@ -485,7 +570,7 @@ public class SimulationGUI extends Application {
                                 }
                                 grid.add(typeComboBox, 1, 5);
 
-                                Button okButton = new Button("Ok");
+                                Button okButton = new Button("OK");
                                 okButton.getStyleClass().add("okButton");
                                 grid.add(okButton, 0, 6);
                                 okButton.setOnAction(new EventHandler<ActionEvent>() {
@@ -529,6 +614,13 @@ public class SimulationGUI extends Application {
                                 stage.show();
                             }
                         }
+                        if (!found) {
+                            Alert error = new Alert(AlertType.ERROR);
+                            error.setTitle("Trader not found.");
+                            error.setHeaderText(null);
+                            error.setContentText("The traderID " + traderID + " does not exist.");
+                            error.showAndWait();
+                        }
                     }
 
                 });
@@ -555,6 +647,7 @@ public class SimulationGUI extends Application {
             @Override
             public void handle(ActionEvent t) {
                 Stage stage = new Stage();
+                stage.setTitle("Remove Trader");
                 GridPane grid = new GridPane();
                 grid.setPadding(new Insets(50, 50, 50, 100));
                 grid.setHgap(50);
@@ -567,7 +660,7 @@ public class SimulationGUI extends Application {
                 TextField traderIDTextField = new TextField();
                 grid.add(traderIDTextField, 1, 0);
 
-                Button okButton = new Button("Ok");
+                Button okButton = new Button("OK");
                 okButton.getStyleClass().add("okButton");
                 okButton.setTranslateX(50);
                 grid.add(okButton, 0, 1);
@@ -575,8 +668,10 @@ public class SimulationGUI extends Application {
                     @Override
                     public void handle(ActionEvent t) {
                         int traderID = Integer.parseInt(traderIDTextField.getText());
+                        boolean found = false;
                         for (int i = 0; i < simulation.traders.size(); i++) {
                             if (traderID == simulation.traders.get(i).getTraderID()) {
+                                found = true;
                                 Trader removedTrader = simulation.traders.get(i);
                                 simulation.traders.remove(i);
                                 stage.close();
@@ -586,6 +681,13 @@ public class SimulationGUI extends Application {
                                 confirm.setContentText("Trader " + removedTrader.name + " has been removed.");
                                 confirm.showAndWait();
                             }
+                        }
+                        if (!found) {
+                            Alert error = new Alert(AlertType.ERROR);
+                            error.setTitle("Trader not found.");
+                            error.setHeaderText(null);
+                            error.setContentText("The traderID " + traderID + " does not exist.");
+                            error.showAndWait();
                         }
                     }
 
@@ -618,6 +720,7 @@ public class SimulationGUI extends Application {
             @Override
             public void handle(ActionEvent t) {
                 Stage stage = new Stage();
+                stage.setTitle("Add Client");
                 GridPane grid = new GridPane();
                 grid.setPadding(new Insets(50, 50, 50, 100));
                 grid.setHgap(50);
@@ -655,7 +758,7 @@ public class SimulationGUI extends Application {
                 TextField returnTextField = new TextField();
                 grid.add(returnTextField, 1, 4);
 
-                Button okButton = new Button("Ok");
+                Button okButton = new Button("OK");
                 okButton.getStyleClass().add("okButton");
                 grid.add(okButton, 0, 5);
                 okButton.setOnAction(new EventHandler<ActionEvent>() {
@@ -695,6 +798,7 @@ public class SimulationGUI extends Application {
             @Override
             public void handle(ActionEvent t) {
                 Stage stage = new Stage();
+                stage.setTitle("Edit Client");
                 GridPane grid = new GridPane();
                 grid.setPadding(new Insets(50, 50, 50, 100));
                 grid.setHgap(50);
@@ -707,7 +811,7 @@ public class SimulationGUI extends Application {
                 TextField clientIDTextField = new TextField();
                 grid.add(clientIDTextField, 1, 0);
 
-                Button okButton = new Button("Ok");
+                Button okButton = new Button("OK");
                 okButton.getStyleClass().add("okButton");
                 okButton.setTranslateX(50);
                 grid.add(okButton, 0, 1);
@@ -715,11 +819,14 @@ public class SimulationGUI extends Application {
                     @Override
                     public void handle(ActionEvent t) {
                         int clientID = Integer.parseInt(clientIDTextField.getText());
+                        boolean found = false;
                         for (int i = 0; i < simulation.clients.size(); i++) {
                             if (clientID == simulation.clients.get(i).getClientID()) {
+                                found = true;
                                 Client client = simulation.clients.get(i);
                                 stage.close();
                                 Stage stage = new Stage();
+                                stage.setTitle("Edit Client");
                                 GridPane grid = new GridPane();
                                 grid.setPadding(new Insets(50, 50, 50, 100));
                                 grid.setHgap(50);
@@ -760,7 +867,7 @@ public class SimulationGUI extends Application {
                                 returnTextField.setText("" + client.expectedReturn);
                                 grid.add(returnTextField, 1, 4);
 
-                                Button okButton = new Button("Ok");
+                                Button okButton = new Button("OK");
                                 okButton.getStyleClass().add("okButton");
                                 grid.add(okButton, 0, 5);
                                 okButton.setOnAction(new EventHandler<ActionEvent>() {
@@ -796,6 +903,13 @@ public class SimulationGUI extends Application {
                                 stage.show();
                             }
                         }
+                        if (!found) {
+                            Alert error = new Alert(AlertType.ERROR);
+                            error.setTitle("Client not found.");
+                            error.setHeaderText(null);
+                            error.setContentText("The clientID " + clientID + " does not exist.");
+                            error.showAndWait();
+                        }
                     }
 
                 });
@@ -822,6 +936,7 @@ public class SimulationGUI extends Application {
             @Override
             public void handle(ActionEvent t) {
                 Stage stage = new Stage();
+                stage.setTitle("Remove Client");
                 GridPane grid = new GridPane();
                 grid.setPadding(new Insets(50, 50, 50, 100));
                 grid.setHgap(50);
@@ -834,16 +949,18 @@ public class SimulationGUI extends Application {
                 TextField clientIDTextField = new TextField();
                 grid.add(clientIDTextField, 1, 0);
 
-                Button okButton = new Button("Ok");
+                Button okButton = new Button("OK");
                 okButton.getStyleClass().add("okButton");
                 okButton.setTranslateX(50);
                 grid.add(okButton, 0, 1);
                 okButton.setOnAction(new EventHandler<ActionEvent>() {
                     @Override
                     public void handle(ActionEvent t) {
-                        int traderID = Integer.parseInt(clientIDTextField.getText());
+                        int clientID = Integer.parseInt(clientIDTextField.getText());
+                        boolean found = false;
                         for (int i = 0; i < simulation.clients.size(); i++) {
-                            if (traderID == simulation.clients.get(i).getClientID()) {
+                            if (clientID == simulation.clients.get(i).getClientID()) {
+                                found = true;
                                 Client removedClient = simulation.clients.get(i);
                                 simulation.clients.remove(i);
                                 stage.close();
@@ -853,6 +970,13 @@ public class SimulationGUI extends Application {
                                 confirm.setContentText("Client " + removedClient.clientName + " has been removed.");
                                 confirm.showAndWait();
                             }
+                        }
+                        if (!found) {
+                            Alert error = new Alert(AlertType.ERROR);
+                            error.setTitle("Stock not found.");
+                            error.setHeaderText(null);
+                            error.setContentText("The clientID " + clientID + " does not exist.");
+                            error.showAndWait();
                         }
                     }
 
@@ -873,7 +997,6 @@ public class SimulationGUI extends Application {
                 scene.getStylesheets().add("MenuCascadeStyleSheet.css");
                 stage.show();
             }
-
         });
         clientMenu.getItems().addAll(addClientMenuItem, new SeparatorMenuItem(), editClientMenuItem, new SeparatorMenuItem(), removeClientMenuItem);
 
@@ -888,7 +1011,7 @@ public class SimulationGUI extends Application {
         marketLabel.setFont(Font.font("Arial", FontWeight.NORMAL, 18));
         marketLabel.setTranslateX(650);
         marketLabel.setMinWidth(200);
-        
+
         Button runButton = new Button("Run");
         runButton.setTranslateX(150);
         runButton.setTranslateY(500);
