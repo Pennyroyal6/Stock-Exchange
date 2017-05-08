@@ -108,7 +108,6 @@ public class Portfolio {
             this.money -= money;
             if (this.money < 0) {
                 this.money = oldMoneyValue;
-                System.out.println("Cannot not have a negative money amount.");
             }
         }
     }
