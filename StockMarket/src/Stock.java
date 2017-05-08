@@ -26,14 +26,14 @@ public class Stock {
      * @param price The price of the stock.
      */
     public Stock(String companyName, StockType type, double price, int sharesOffered) {
-        setStockID(++count);
-        this.companyName = companyName;
-        this.type = type;
-        this.price = price;
-        if (price > 0) {
-            tradeable = true;
+        if (companyName.length() > 0 && price > 0 && checkPositiveValue(sharesOffered)) {
+            setStockID(++count);
+            this.companyName = companyName;
+            this.type = type;
+            this.price = price;
+            this.tradeable = true;
+            this.sharesOffered = sharesOffered;
         }
-        this.sharesOffered = sharesOffered;
     }
 
     /**
@@ -99,7 +99,9 @@ public class Stock {
      * @param companyName The company name of the stock.
      */
     public void setCompanyStockReperesents(String companyName) {
-        this.companyName = companyName;
+        if (companyName.length() > 0) {
+            this.companyName = companyName;
+        }
     }
 
     /**
@@ -130,6 +132,7 @@ public class Stock {
 
     /**
      * Returns the type of stock
+     *
      * @return The type of the stock.
      */
     public StockType getStockType() {
@@ -138,6 +141,7 @@ public class Stock {
 
     /**
      * Retrieves stockID
+     *
      * @return The stockID.
      */
     public int getStockID() {
@@ -146,6 +150,7 @@ public class Stock {
 
     /**
      * Sets the type of stock
+     *
      * @param type The type of stock.
      */
     public void setType(StockType type) {
@@ -154,20 +159,24 @@ public class Stock {
 
     /**
      * Sets the price of the stock
+     *
      * @param price The price of the stock.
      */
     public void setPrice(double price) {
-        this.price = price;
+        if (price > 0) {
+            this.price = price;
+        }
     }
 
     /**
      * Sets the amount of stocks offered
+     *
      * @param quantity The quantity of the stock offered.
      */
     public void setSharesOffered(int quantity) {
-        this.sharesOffered = quantity;
+        if (checkPositiveValue(quantity)) {
+            this.sharesOffered = quantity;
+        }
     }
-    
-    
-    
+
 }

@@ -37,7 +37,9 @@ public class Portfolio {
      * @param portfolioID The portfolioID.
      */
     public void setPortfolioID(int portfolioID) {
-        this.portfolioID = portfolioID;
+        if (checkPositiveValue(portfolioID)) {
+            this.portfolioID = portfolioID;
+        }
     }
 
     /**
@@ -65,8 +67,10 @@ public class Portfolio {
      * @param quantity The quantity of stock added.
      */
     public void addStock(Stock stock, int quantity) {
-        stocks.add(stock);
-        stock.quantity += quantity;
+        if (checkPositiveValue(quantity)) {
+            stocks.add(stock);
+            stock.quantity += quantity;
+        }
     }
 
     /**
@@ -76,8 +80,10 @@ public class Portfolio {
      * @param quantity The quantity of stock removed
      */
     public void deleteStock(Stock stock, int quantity) {
-        stocks.remove(stock);
-        stock.quantity -= quantity;
+        if (checkPositiveValue(quantity)) {
+            stocks.remove(stock);
+            stock.quantity -= quantity;
+        }
     }
 
     /**

@@ -83,7 +83,14 @@ public class SimulatorJUnitTest {
     //Trading Exchange tests
     @Test
     public void assignExchangeToStockMarket() {
-        assertEquals(1, stockMarket.marketID);
+        tradingExchange.setStockMarketID(1);
+        assertEquals(1, tradingExchange.stockMarketID);
+    }
+    
+    @Test
+    public void assignNegativeValueStockMarketIDToTradingExchange() {
+        tradingExchange.setStockMarketID(-2);
+        assertEquals(1, tradingExchange.stockMarketID);
     }
     
     @Test
@@ -118,6 +125,11 @@ public class SimulatorJUnitTest {
         assertEquals(MarketType.Stable, stockMarket.status);
     }
     
+    @Test
+    public void testStockMarketID() {
+        assertEquals(1, stockMarket.getMarketID());
+    }
+    
     //Portfolio tests
     @Test
     public void assignPortfolioToClient() {
@@ -136,8 +148,20 @@ public class SimulatorJUnitTest {
     }
     
     @Test
+    public void addInvalidStockAmountToPortfolio() {
+        portfolio.addStock(stock1, -2);
+        assertEquals(1, portfolio.stocks.size());
+    }
+    
+    @Test
     public void removeStockFromPortfolio() {
         portfolio.deleteStock(stock1, 100);
+        assertEquals(0, portfolio.stocks.size());
+    }
+    
+    @Test
+    public void removeInvalidStockAmountToPortfolio() {
+        portfolio.deleteStock(stock1, -5);
         assertEquals(0, portfolio.stocks.size());
     }
     
@@ -148,8 +172,20 @@ public class SimulatorJUnitTest {
     }
     
     @Test
+    public void depositNegativeMoneyTest() {
+        client.depositInitialMoney(-5);
+        assertEquals(0, portfolio.getMoney());
+    }
+    
+    @Test
     public void removeMoneyTest() {
         portfolio.removeMoney(5);
+        assertEquals(0, portfolio.getMoney());
+    }
+    
+    @Test
+    public void removeNegativeMoneyTest() {
+        portfolio.removeMoney(-5);
         assertEquals(0, portfolio.getMoney());
     }
     
@@ -161,7 +197,13 @@ public class SimulatorJUnitTest {
     
     //Client tests
     @Test
-    public void clientName() {
+    public void checkClientName() {
+        assertEquals("Kingsley Sage", client.clientName);
+    }
+    
+    @Test
+    public void  checkInvalidClientName() {
+        client.setName("");
         assertEquals("Kingsley Sage", client.clientName);
     }
     
@@ -187,7 +229,19 @@ public class SimulatorJUnitTest {
     }
     
     @Test
+    public void setInvalidRisk() {
+        client.setRisk(-2);
+        assertEquals(1, client.getRisk());
+    }
+    
+    @Test
     public void checkExpectedReturn() {
+        assertEquals(100, client.expectedReturn);
+    }
+    
+    @Test
+    public void setInvalidExpectedReturn() {
+        client.setRisk(-3);
         assertEquals(100, client.expectedReturn);
     }
     
@@ -207,6 +261,12 @@ public class SimulatorJUnitTest {
     }
     
     @Test
+    public void assignInvalidStockName() {
+        stock1.setCompanyStockReperesents("");
+        assertEquals("Test Company", stock1.getCompanyStockRepresents());
+    }
+    
+    @Test
     public void checkStockPrice() {
         assertEquals(9, stock1.price, 0.0);
     }
@@ -218,9 +278,22 @@ public class SimulatorJUnitTest {
     }
     
     @Test
+    public void increaseNegativeStockPrice() {
+        stock1.increaseValue(-2);
+        assertEquals(5, stock1.getValueOfStock(), 0.0);
+    }
+    
+    @Test
     public void decreaseStockPrice() {
         stock2.decreaseValue(7);
         assertEquals(5, stock2.getValueOfStock(), 0.0);
+    }
+    
+    @Test
+    public void decreaseNegativeStockPrice() {
+        stock2.decreaseValue(-4);
+        assertEquals(12, stock2.getValueOfStock(), 0.0);
+        
     }
     
     @Test

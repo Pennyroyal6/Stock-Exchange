@@ -17,6 +17,7 @@ public class TradingExchange {
 
     /**
      * Constructs the trading exchange
+     *
      * @param type The type of trading exchange.
      * @param stockMarketID The stockmarket ID.
      */
@@ -25,9 +26,10 @@ public class TradingExchange {
         this.type = type;
         this.stockMarketID = stockMarketID;
     }
-    
+
     /**
      * Sets the exchangeID
+     *
      * @param exchangeID The exchangeID
      */
     public void setExchangeID(int exchangeID) {
@@ -36,6 +38,7 @@ public class TradingExchange {
 
     /**
      * Retrives the trading exchange ID.
+     *
      * @return The exchange ID.
      */
     public int getExchangeId() {
@@ -44,6 +47,7 @@ public class TradingExchange {
 
     /**
      * Retrieves the type of trading exchange
+     *
      * @return The type of trading exchange.
      */
     public ExchangeType getType() {
@@ -52,6 +56,7 @@ public class TradingExchange {
 
     /**
      * Sets the type of the exchange
+     *
      * @param type The type of exchange.
      */
     public void setType(ExchangeType type) {
@@ -60,18 +65,22 @@ public class TradingExchange {
 
     /**
      * Gets the stockmarketID
+     *
      * @return The stock market ID.
      */
     public int getStockMarketID() {
         return this.stockMarketID;
     }
-    
+
     /**
      * Sets the stockmarketID
+     *
      * @param stockMarketID The stock market ID.
      */
-    public void setStockMarketID (int stockMarketID) {
-        this.stockMarketID = stockMarketID;
+    public void setStockMarketID(int stockMarketID) {
+        if (stockMarketID > 0) {
+            this.stockMarketID = stockMarketID;
+        }
     }
 
 }
